@@ -13,11 +13,9 @@ export class TemplateTodoComponent implements OnInit {
   @Input() toDo: Todo;
   @Output() ping: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(
-    public dataService: DataService
-  ) {}
+  constructor(public dataService: DataService) {}
 
-   public changeCheck(event?: any): void {
+   changeCheck(event?: any): void {
      this.toDo.status = !this.toDo.status;
      this.dataService.putToDo(this.toDo).subscribe((data: Todo)=> {
       const eventObject: Eventping = {
@@ -30,7 +28,7 @@ export class TemplateTodoComponent implements OnInit {
     });
    }
 
-   public changeLabel(event?: any): void {
+   changeLabel(event?: any): void {
     this.dataService.putToDo(this.toDo).subscribe((data: Todo)=> {
       const eventObject: Eventping = {
         label: 'label',
@@ -42,7 +40,7 @@ export class TemplateTodoComponent implements OnInit {
     });
    }
 
-   public deleteToDo(event?: any): void {
+   deleteToDo(event?: any): void {
     this.dataService.deleteToDo(this.toDo).subscribe((data: Todo)=> {
       const eventObject: Eventping = {
         label: 'delete',

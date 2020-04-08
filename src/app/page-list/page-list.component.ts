@@ -50,12 +50,12 @@ export class PageListComponent implements OnInit, OnDestroy {
   position(): void {
     let position = 0;
     this.toDos.forEach((toDo: Todo) => {
-      position += 1;
-      toDo.position = position;
-      this.dataService.putToDo(toDo).subscribe((data: Todo) => {
-        console.log(`${data.label} wurde erfolgreich positioniert`, `color: green; font-size: 12px;`)
+        position += 1;
+        toDo.position = position;
+        this.dataService.putToDo(toDo).subscribe((data: Todo) => {
+        console.log(`${data.label} pos: ${data.position} wurde erfolgreich positioniert`)
       }, error => {
-      console.log(`ERROR: ${error.message}`, `color: red; font-size: 12px;`);
+        console.log(`ERROR: ${error.message}`, `color: red; font-size: 12px;`);
       });
     })
   }
@@ -120,7 +120,6 @@ export class PageListComponent implements OnInit, OnDestroy {
         });
       }
     }
-    console.log(this.toDos);
   }
 
 }

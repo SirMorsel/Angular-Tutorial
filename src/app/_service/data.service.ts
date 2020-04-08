@@ -10,9 +10,7 @@ export class DataService {
 
   private serverUrl = 'http://localhost:3000';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor( private http: HttpClient) { }
 
   //GET
   public getToDo(): Observable<Todo[]>{
@@ -25,7 +23,7 @@ export class DataService {
   }
 
   //POST
-  public postToDo(object: Todo): Observable<Todo>{
+  public postToDo(object: Todo): Observable<Todo> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -35,7 +33,7 @@ export class DataService {
   }
 
   //DELETE
-  public deleteToDo(object: Todo): Observable<Todo>{
+  public deleteToDo(object: Todo): Observable<Todo> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -45,7 +43,7 @@ export class DataService {
   }
 
   //PUT
-  public putToDo(object: Todo): Observable<Todo>{
+  public putToDo(object: Todo): Observable<Todo> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
