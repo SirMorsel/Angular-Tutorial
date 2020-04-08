@@ -70,7 +70,10 @@ export class PageListComponent implements OnInit, OnDestroy {
         } else {
           this.toDos.push(toDo);
         }
-      })
+      });
+      this.toDos.sort((obj1, obj2) => {
+        return obj1.position - obj2.position;
+      });
     }, error => {
       console.log(`ERROR: ${error.message}`, `color: red; font-size: 12px;`);
     });
