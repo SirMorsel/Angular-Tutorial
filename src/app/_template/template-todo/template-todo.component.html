@@ -1,0 +1,14 @@
+<div class="todo" [class.done]="toDo.status">
+    <div class="todo-content">
+        <div class="handle">::</div>
+        <div class="todo-content-check">
+            <input type="checkbox" [(ngModel)]="toDo.status" (click)="changeCheck($event)">
+        </div>
+        <div class="todo-content-title">
+            <input type="text" (blur)="changeLabel($event)" [(ngModel)]="toDo.label" placeholder="Name des Punktes">
+        </div>
+        <div class="delete" (click)="deleteToDo($event)">
+            <span>Löschen</span>
+        </div>
+    </div>
+</div>

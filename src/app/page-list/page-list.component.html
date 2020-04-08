@@ -1,0 +1,12 @@
+<app-template-header></app-template-header>
+<div class="list-view">
+    <h4 (click)="toDoShow=!toDoShow">Offen<span>( {{toDos.length}} )</span></h4>
+    <div class="todo-elements" dragula="todosGroup" (dragulaModel)="toDos" (dragulaModelChange)="toDos = $event" *ngIf="toDoShow">
+        <app-template-todo (ping)="update($event)" [toDo]="toDoSingle" *ngFor=" let toDoSingle of toDos"></app-template-todo>
+    </div>
+    <app-template-todo-form (ping)="create($event)"></app-template-todo-form>
+    <h4 (click)="toDoDoneShow=!toDoDoneShow">Erledigt<span>( {{toDosDone.length}} )</span></h4>
+    <div class="todo-elements" *ngIf="toDoDoneShow">
+        <app-template-todo (ping)="update($event)" [toDo]="toDoSingle" *ngFor=" let toDoSingle of toDosDone"></app-template-todo>
+    </div>
+</div>
