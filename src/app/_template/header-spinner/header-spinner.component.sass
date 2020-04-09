@@ -1,0 +1,60 @@
+@import '../../../sass/var'
+
+$spinnerScale: 0.5
+    
+.spinner-container
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    .spinner
+        position: relativ
+        width: 10rem * $spinnerScale
+        height: 10rem * $spinnerScale
+        .spinner-circle-border
+            border-radius: 50%
+            border: solid 0.3rem $second
+            border-right: 0.3rem solid
+            border-left: 0.3rem solid
+        .spinner-circle-color-prime
+            border-right-color: $prime
+            border-left-color: $prime
+        .spinner-circle-color-white
+            border-right-color: $white
+            border-left-color: $white
+        .spinner-circle-1
+            position: absolute
+            top: 0.5rem * $spinnerScale
+            left: 0.5rem * $spinnerScale
+            width: 9rem * $spinnerScale
+            height: 9rem * $spinnerScale
+            animation: spinner 1.5s 50ms infinite
+        .spinner-circle-2
+            position: absolute
+            top: 1.5rem * $spinnerScale
+            left: 1.5rem * $spinnerScale
+            width: 7rem * $spinnerScale
+            height: 7rem * $spinnerScale
+            animation: spinner 1.5s 200ms infinite
+        .spinner-circle-3
+            position: absolute
+            top: 2.5rem * $spinnerScale
+            left: 2.5rem * $spinnerScale
+            width: 5rem * $spinnerScale
+            height: 5rem * $spinnerScale
+            animation: spinner 1.5s 350ms infinite
+        .spinner-circle-4
+            position: absolute
+            top: 3.5rem * $spinnerScale
+            left: 3.5rem * $spinnerScale
+            width: 3rem * $spinnerScale
+            height: 3rem * $spinnerScale
+            animation: spinner 1.5s 500ms infinite
+
+@keyframes spinner
+    0%
+        transform: rotate(0)
+    100%
+        transform: rotate(360deg)
+        
+            

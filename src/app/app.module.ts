@@ -11,6 +11,7 @@ import { TemplateTodoFormComponent } from './_template/template-todo-form/templa
 import { TemplateHeaderComponent } from './_template/template-header/template-header.component';
 
 import { DragulaModule } from 'ng2-dragula';
+import { HeaderSpinnerComponent } from './_template/header-spinner/header-spinner.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DragulaModule } from 'ng2-dragula';
     PageListComponent,
     TemplateTodoComponent,
     TemplateTodoFormComponent,
-    TemplateHeaderComponent
+    TemplateHeaderComponent,
+    HeaderSpinnerComponent
   ],
   imports: [
     BrowserModule,
