@@ -25,8 +25,6 @@ export class PageListComponent implements OnInit, OnDestroy {
   ) {
     this.toDoShow = true;
     this.toDoDoneShow = false;
-    this.toDos = [];
-    this.toDosDone = [];
     this.loadData();
 
     this.dragulaService.createGroup('todosGroup', {
@@ -49,10 +47,11 @@ export class PageListComponent implements OnInit, OnDestroy {
 
   position(): void {
     let position = 0;
-    this.toDos.forEach((toDo: Todo) => {
-        position += 1;
-        toDo.position = position;
-        this.dataService.putToDo(toDo).subscribe((data: Todo) => {
+    this.toDos.forEach((toDoData: Todo) => {
+      console.log("Label: " + toDoData.label + " Position: " + toDoData.position)
+        position++;
+        toDoData.position = position;
+        this.dataService.putToDo(toDoData).subscribe((data: Todo) => {
         console.log(`${data.label} pos: ${data.position} wurde erfolgreich positioniert`)
       }, error => {
         console.log(`ERROR: ${error.message}`, `color: red; font-size: 12px;`);
