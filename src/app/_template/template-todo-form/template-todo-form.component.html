@@ -2,7 +2,7 @@
     <div class="todo-content">
         <input type="text" (keyup.enter)="createToDo($event)" [(ngModel)]="toDo.label" placeholder="Name des Punktes">
     </div>
-    <div class="create" (click)="createToDo($event)" [class.isDisabled]="toDo.label == undefined">
+    <div class="create" (click)="createToDo($event)" [ngClass]="{ 'isDisabled' : toDo.label == undefined || toDo.label == ''}">
         <span>Erstellen</span>
     </div>
 </div>

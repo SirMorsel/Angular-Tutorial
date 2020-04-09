@@ -18,18 +18,19 @@ export class TemplateTodoFormComponent implements OnInit {
       status: false,
       position: undefined
     }
+    console.log('TextINIT:' + this.toDo.label);
    }
 
   ngOnInit(): void {
   }
 
   public createToDo(event?: any): void {
-    if (this.toDo.label != undefined	) {
+    if (this.toDo.label != undefined && this.toDo.label != '') {
         this.ping.emit(this.toDo);
         this.toDo = {
-        label: undefined,
-        status: false,
-        position: undefined
+          label: undefined,
+          status: false,
+          position: undefined
       }
     }
   }
