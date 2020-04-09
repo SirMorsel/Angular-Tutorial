@@ -24,11 +24,13 @@ export class TemplateTodoFormComponent implements OnInit {
   }
 
   public createToDo(event?: any): void {
-    this.ping.emit(this.toDo);
-    this.toDo = {
-      label: undefined,
-      status: false,
-      position: undefined
+    if (this.toDo.label != undefined	) {
+        this.ping.emit(this.toDo);
+        this.toDo = {
+        label: undefined,
+        status: false,
+        position: undefined
+      }
     }
   }
 
